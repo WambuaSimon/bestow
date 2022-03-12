@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class BeneficiariesWidget extends StatelessWidget {
@@ -8,7 +10,11 @@ class BeneficiariesWidget extends StatelessWidget {
     return Column(
       children: [
         Card(
-          elevation: 10,
+          shape: Border(left: BorderSide(
+              color: Colors.primaries[Random().nextInt(Colors.primaries.length)
+              ], width: 2),
+          ),
+
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
@@ -26,67 +32,99 @@ class BeneficiariesWidget extends StatelessWidget {
                     ),
                     const Text(
                       "Imani Children\'s Home",
-                      style: TextStyle(fontSize: 18, color: Colors.black),
+                      style: TextStyle(color: Colors.black),
                     ),
-                    Spacer(),
-                    Icon(Icons.favorite_border_outlined, color: Colors.blueAccent)
+                    const Spacer(),
+                    const Icon(Icons.favorite_border_outlined,
+                        color: Color(0xff209fa5))
                   ],
                 ),
-                const   SizedBox(
-                  height: 10,
-                ),
-                Wrap(
-                  spacing: 8.0, // gap between adjacent chips
-                  runSpacing: 4.0, // gap between lines
-                  children: const [
-                    Chip(
-                      label: Text(
-                        'Foodstuff',
-                        style: TextStyle(color: Color(0xffAB47BC)),
+                const SizedBox(height: 10,),
+                Container(
+                  margin: EdgeInsets.only(left: 5),
+                  child: Wrap(
+                    spacing: 8.0, // gap between adjacent chips
+                    runSpacing: 4.0, // gap between lines
+                    children: [
+                      Container(
+                        decoration: const BoxDecoration(
+                            color: Color(0xffCFD8DC),
+                            borderRadius: BorderRadius.all(Radius.circular(5))),
+                        child: const Padding(
+                          padding: EdgeInsets.all(3.0),
+                          child: Text(
+                            'Foodstuff',
+                            style:
+                            TextStyle(color: Color(0xff002642), fontSize: 10),
+                          ),
+                        ),
                       ),
-                    ),
-                    Chip(
-                      label: Text('Clothing',
-                          style: TextStyle(color: Color(0xffEF5350))),
-                    ),
-                    Chip(
-                      label: Text('Bedding',
-                          style: TextStyle(color: Color(0xff26C6DA))),
-                    ),
-                  ],
+
+                      Container(
+                        decoration: const BoxDecoration(
+                            color: Color(0xffCFD8DC),
+                            borderRadius: BorderRadius.all(Radius.circular(5))),
+                        child: const Padding(
+                          padding: EdgeInsets.all(3.0),
+                          child: Text(
+                            'Clothing',
+                            style:
+                            TextStyle(color: Color(0xff002642), fontSize: 10),
+                          ),
+                        ),
+                      ),
+
+                      Container(
+                        decoration: const BoxDecoration(
+                            color: Color(0xffCFD8DC),
+                            borderRadius: BorderRadius.all(Radius.circular(5))),
+                        child: const Padding(
+                          padding: EdgeInsets.all(3.0),
+                          child: Text(
+                            'Bedding',
+                            style:
+                            TextStyle(color: Color(0xff002642), fontSize: 10),
+                          ),
+                        ),
+                      ),
+
+                    ],
+                  ),
                 ),
-                const   SizedBox(
-                  height: 10,
-                ),
+                SizedBox(height: 10,),
                 Row(
                   children: [
                     const Icon(
                       Icons.location_on,
-                      color: Colors.green,
+                      color: Color(0xff209fa5),
+                      size: 18,
                     ),
-                    Text('Rongai'),
+                    const Text(
+                      'Rongai',
+                      style: TextStyle(fontSize: 12),
+                    ),
                     Spacer(),
-
-                    Padding(
-                      padding: const EdgeInsets.all(2.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Colors.blueAccent,
-                            ),
-                            borderRadius:const BorderRadius.all(Radius.circular(20))
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Row(
-                            children: const [
-                              Text("Bestow",style: TextStyle(color: Colors.black),),
-                              Icon(
-                                Icons.arrow_forward_sharp,
-                                color: Colors.red,
-                              ),
-                            ],
+                    Container(
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Color(0xff209fa5),
                           ),
+                          borderRadius:
+                          const BorderRadius.all(Radius.circular(5))),
+                      child: Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: Row(
+                          children: const [
+                            Text(
+                              "Donate",
+                              style: TextStyle(color: Color(0xff209fa5)),
+                            ),
+                            Icon(
+                              Icons.arrow_forward_sharp,
+                              color: Color(0xff209fa5),
+                              size: 15,
+                            ),
+                          ],
                         ),
                       ),
                     )
@@ -96,7 +134,6 @@ class BeneficiariesWidget extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: 16,),
 
       ],
     );

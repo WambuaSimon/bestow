@@ -1,4 +1,4 @@
-import 'package:bestow/profile/profile_header.dart';
+
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -13,7 +13,7 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
 
-      body: ProfileHeaderWidget(),
+      body: Container(),
     );
   }
 }
