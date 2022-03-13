@@ -1,9 +1,7 @@
 import 'package:bestow/upload_item/widgets/choice_chip.dart';
 import 'package:bestow/upload_item/widgets/donation_setup.dart';
 import 'package:bestow/upload_item/widgets/pick_up_details.dart';
-import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
-import 'package:getwidget/components/dropdown/gf_dropdown.dart';
 
 class AddDonationPage extends StatefulWidget {
   const AddDonationPage({Key? key}) : super(key: key);
@@ -18,7 +16,7 @@ class _AddDonationPageState extends State<AddDonationPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "Bestow ❤️",
+          "Bestow",
           style: TextStyle(
             color: Color(0xff209fa5),
           ),
@@ -83,8 +81,8 @@ class _AddDonationPageState extends State<AddDonationPage> {
                   child: const Padding(
                       padding: EdgeInsets.all(8.0), child: PickUpDetails()),
                 ),
-                const SizedBox(height:10,),
-                Container(
+                const SizedBox(height:20,),
+                SizedBox(
                   width: MediaQuery.of(context).size.width,
                   child: OutlinedButton(
                     style: OutlinedButton.styleFrom(

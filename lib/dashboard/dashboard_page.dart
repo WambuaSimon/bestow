@@ -27,7 +27,7 @@ class _DashboardPageState extends State<DashboardPage> {
         backgroundColor: Colors.white,
         appBar: AppBar(
           title: const Text(
-        "Bestow ❤️",
+        "Bestow️",
         style: TextStyle(color: Color(0xff209fa5)),
           ),
           elevation: 0.3,

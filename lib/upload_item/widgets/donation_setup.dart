@@ -30,13 +30,15 @@ class _DonationSetUpState extends State<DonationSetUp> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Wrap(
+                spacing: 10,
+                runSpacing: 10,
                 children: [
                   Transform(
                     transform: Matrix4.identity()..scale(0.9),
                     child: ChoiceChipWidget(
                       itemName: 'Clothing',
                       isSelected: false,
-                      onSelected: (bool) {},
+                      onSelected: (bool) {}, color:  const Color(0xff209fa5),
                     ),
                   ),
                   Transform(
@@ -44,12 +46,13 @@ class _DonationSetUpState extends State<DonationSetUp> {
                     child: ChoiceChipWidget(
                       itemName: 'Foodstuff',
                       isSelected: true,
-                      onSelected: (bool) {},
+                      onSelected: (bool) {}, color:  const Color(0xff209fa5),
                     ),
                   ),
                   Transform(
                     transform:  Matrix4.identity()..scale(0.9),
                     child: ChoiceChipWidget(
+                      color:  const Color(0xff209fa5),
                       itemName: 'Furniture',
                       isSelected: false,
                       onSelected: (bool) {},
@@ -58,6 +61,7 @@ class _DonationSetUpState extends State<DonationSetUp> {
                   Transform(
                     transform:  Matrix4.identity()..scale(0.9),
                     child: ChoiceChipWidget(
+                      color:  const Color(0xff209fa5),
                       itemName: 'Books',
                       isSelected: true,
                       onSelected: (bool) {},
@@ -66,6 +70,7 @@ class _DonationSetUpState extends State<DonationSetUp> {
                   Transform(
                     transform:  Matrix4.identity()..scale(0.9),
                     child: ChoiceChipWidget(
+                      color:  const Color(0xff209fa5),
                       itemName: 'Electronics',
                       isSelected: true,
                       onSelected: (bool) {},
@@ -74,6 +79,7 @@ class _DonationSetUpState extends State<DonationSetUp> {
                   Transform(
                     transform:  Matrix4.identity()..scale(0.9),
                     child: ChoiceChipWidget(
+                      color:  const Color(0xff209fa5),
                       itemName: 'Kitchenware',
                       isSelected: false,
                       onSelected: (bool) {},
@@ -175,7 +181,7 @@ class _DonationSetUpState extends State<DonationSetUp> {
         child: DropdownButton<String>(
             hint: const Padding(
               padding: EdgeInsets.all(8.0),
-              child: Text("Select beneficiary",style: TextStyle(fontSize: 12),),
+              child: Text("Select beneficiary",style: TextStyle(fontSize: 15),),
             ),
             value: value,
             icon: const Icon(

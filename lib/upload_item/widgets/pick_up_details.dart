@@ -49,7 +49,7 @@ class _PickUpDetailsState extends State<PickUpDetails> {
                   size: 20,
                 ),
                 hintText: "Pick up location",
-                hintStyle: const TextStyle(fontSize: 12),
+                hintStyle: const TextStyle(fontSize: 15),
                 focusedBorder: UnderlineInputBorder(
                     borderRadius: BorderRadius.circular(6.0),
                     borderSide:
@@ -64,7 +64,7 @@ class _PickUpDetailsState extends State<PickUpDetails> {
           ),
         ),
         const SizedBox(
-          height: 15,
+          height: 20,
         ),
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -94,7 +94,7 @@ class _PickUpDetailsState extends State<PickUpDetails> {
                     ),
                     Text(
                       "Date",
-                      style: TextStyle(fontSize: 12),
+                      style: TextStyle(fontSize: 15),
                     ),
                   ],
                 ),
@@ -130,7 +130,7 @@ class _PickUpDetailsState extends State<PickUpDetails> {
                     ),
                     Text(
                       "Time",
-                      style: TextStyle(fontSize: 12),
+                      style: TextStyle(fontSize: 15),
                     ),
                   ],
                 ),
@@ -139,7 +139,7 @@ class _PickUpDetailsState extends State<PickUpDetails> {
           ],
         ),
         const SizedBox(
-          height: 15,
+          height: 20,
         ),
         Container(
           decoration: const BoxDecoration(
@@ -163,7 +163,7 @@ class _PickUpDetailsState extends State<PickUpDetails> {
                   size: 20,
                 ),
                 hintText: "Phone number",
-                hintStyle: const TextStyle(fontSize: 12),
+                hintStyle: const TextStyle(fontSize: 15),
                 focusedBorder: UnderlineInputBorder(
                   borderRadius: BorderRadius.circular(6.0),
                   borderSide:
@@ -179,7 +179,7 @@ class _PickUpDetailsState extends State<PickUpDetails> {
           ),
         ),
         const SizedBox(
-          height: 10,
+          height: 30,
         ),
         Row(
           children: [
@@ -204,9 +204,10 @@ class _PickUpDetailsState extends State<PickUpDetails> {
             const Text(
               "Donate anonymously",
               style: TextStyle(
+                fontSize: 15,
                   color: Color(0xff002642),
                   fontWeight: FontWeight.w500,
-                  fontStyle: FontStyle.italic),
+                  ),
             )
           ],
         ),
