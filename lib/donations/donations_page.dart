@@ -2,7 +2,6 @@ import 'package:bestow/donations/widgets/card_item.dart';
 import 'package:bestow/upload_item/widgets/choice_chip.dart';
 import 'package:flutter/material.dart';
 
-
 class DonationsPage extends StatefulWidget {
   const DonationsPage({Key? key}) : super(key: key);
 
@@ -11,8 +10,6 @@ class DonationsPage extends StatefulWidget {
 }
 
 class _DonationsPageState extends State<DonationsPage> {
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +30,18 @@ class _DonationsPageState extends State<DonationsPage> {
             child: SizedBox(
               width: double.infinity,
               child: Column(
-                children: [
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  Text(
+                    "Recent donations",
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Color(0xff002642),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
                   DonationsItem(),
                   DonationsItem(),
                   DonationsItem(),
