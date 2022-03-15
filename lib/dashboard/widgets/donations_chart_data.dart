@@ -1,18 +1,20 @@
 import 'dart:async';
 import 'dart:math';
+import 'package:bestow/utils/colors.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-class BarChartSample1 extends StatefulWidget {
+class DonationsBarChart extends StatefulWidget {
 
-  const BarChartSample1({Key? key}) : super(key: key);
+  const DonationsBarChart({Key? key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => BarChartSample1State();
+  State<StatefulWidget> createState() => DonationsBarChartState();
 }
 
-class BarChartSample1State extends State<BarChartSample1> {
-  final Color barBackgroundColor = const Color(0xff72d8bf);
+class DonationsBarChartState extends State<DonationsBarChart> {
+  final Color barBackgroundColor = kColorSecodaryDark;
   final Duration animDuration = const Duration(milliseconds: 250);
 
   int touchedIndex = -1;
@@ -24,7 +26,7 @@ class BarChartSample1State extends State<BarChartSample1> {
       aspectRatio: 1,
       child: Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
-        color: const Color(0xff81e5cd),
+        color: kColorSecondary,
         child: Stack(
           children: <Widget>[
             Padding(
@@ -37,15 +39,16 @@ class BarChartSample1State extends State<BarChartSample1> {
                   mainAxisSize: MainAxisSize.max,
                   children: <Widget>[
 
-                    const Padding(
+                     Padding(
                       padding:  EdgeInsets.all(8.0),
                       child:  Text(
-                        'Donation Requests',
-                        style: TextStyle(
-                            color: Color(0xff379982),
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold),
-                      ),
+                        "Donation Requests",
+                        style: GoogleFonts.raleway(
+                          textStyle:
+                          TextStyle(color: kColorPrimary,fontSize: 18,fontWeight: FontWeight.w600 ),
+                        ),
+
+                      )
                     ),
                     const SizedBox(
                       height: 38,
@@ -84,10 +87,10 @@ class BarChartSample1State extends State<BarChartSample1> {
       barRods: [
         BarChartRodData(
           toY: isTouched ? y + 1 : y,
-          colors: isTouched ? [Color(0xff209fa5)] : [barColor],
+          colors: isTouched ? [ColorPrimary] : [barColor],
           width: width,
           borderSide: isTouched
-              ? BorderSide(color: Color(0xff209fa5), width: 1)
+              ? BorderSide(color: ColorPrimary, width: 1)
               : const BorderSide(color: Colors.white, width: 0),
           backDrawRodData: BackgroundBarChartRodData(
             show: true,
@@ -100,7 +103,7 @@ class BarChartSample1State extends State<BarChartSample1> {
     );
   }
 
-  List<BarChartGroupData> showingGroups() => List.generate(7, (i) {
+  List<BarChartGroupData> showingGroups() => List.generate(6, (i) {
     switch (i) {
       case 0:
         return makeGroupData(0, 5, isTouched: i == touchedIndex);
@@ -114,8 +117,6 @@ class BarChartSample1State extends State<BarChartSample1> {
         return makeGroupData(4, 9, isTouched: i == touchedIndex);
       case 5:
         return makeGroupData(5, 11.5, isTouched: i == touchedIndex);
-      case 6:
-        return makeGroupData(6, 6.5, isTouched: i == touchedIndex);
       default:
         return throw Error();
     }
@@ -130,25 +131,22 @@ class BarChartSample1State extends State<BarChartSample1> {
               String weekDay;
               switch (group.x.toInt()) {
                 case 0:
-                  weekDay = 'Monday';
+                  weekDay = 'Clothing';
                   break;
                 case 1:
-                  weekDay = 'Kitchenware';
+                  weekDay = 'Foodstuff';
                   break;
                 case 2:
-                  weekDay = 'Wednesday';
+                  weekDay = 'Furniture';
                   break;
                 case 3:
-                  weekDay = 'Thursday';
+                  weekDay = 'Books';
                   break;
                 case 4:
-                  weekDay = 'Friday';
+                  weekDay = 'Electronics';
                   break;
                 case 5:
-                  weekDay = 'Saturday';
-                  break;
-                case 6:
-                  weekDay = 'Sunday';
+                  weekDay = 'Kitchenware';
                   break;
                 default:
                   throw Error();
@@ -164,7 +162,7 @@ class BarChartSample1State extends State<BarChartSample1> {
                   TextSpan(
                     text: (rod.toY - 1).toString(),
                     style: const TextStyle(
-                      color: Color(0xff209fa5),
+                      color: Colors.white,
                       fontSize: 16,
                       fontWeight: FontWeight.w500,
                     ),
@@ -190,28 +188,26 @@ class BarChartSample1State extends State<BarChartSample1> {
         topTitles: SideTitles(showTitles: false),
         bottomTitles: SideTitles(
           showTitles: true,
-          rotateAngle: 75,
+          rotateAngle: 295,
           getTextStyles: (context, value) => const TextStyle(
-              color: Color(0xff379982), fontWeight: FontWeight.bold, fontSize: 14),
+              color: kColorPrimary, fontWeight:  FontWeight.w600 , fontSize: 14,),
           margin: 5,
           getTitles: (double value) {
             switch (value.toInt()) {
               case 0:
                 return 'Clothing';
               case 1:
-                return 'Kitchenware';
+                return 'Foodstuff';
               case 2:
-                return 'Entertainment';
+                return 'Furniture';
               case 3:
-                return 'Food';
+                return 'Books';
               case 4:
-                return 'F';
+                return 'Electronics';
               case 5:
-                return 'S';
-              case 6:
-                return 'S';
+                return 'Kitchenware';
               default:
-                return '';
+                return "";
             }
           },
         ),
