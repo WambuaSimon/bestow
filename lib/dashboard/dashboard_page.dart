@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
+import 'bar_chart_data.dart';
 import 'beneficiaries_widget.dart';
 import 'items.dart';
 
@@ -42,46 +43,20 @@ class _DashboardPageState extends State<DashboardPage> {
                 children: [
                   Container(
                     margin: EdgeInsets.only(left: 10),
-                    child: const Text(
-                      "Donation requests",
-                      style: TextStyle(fontSize: 18, color: Color(0xff209fa5)),
-                    ),
+                    // child: const Text(
+                    //   "Donation requests",
+                    //   style: TextStyle(fontSize: 18, color: Color(0xff209fa5)),
+                    // ),
                   ),
                   const SizedBox(
                     height: 16,
                   ),
                   Center(
                     child: SizedBox(
-                      height: 400,
-                      child: SfCartesianChart(
-                        plotAreaBorderWidth: 0,
-                        primaryXAxis: CategoryAxis(
-                          labelIntersectAction:
-                              AxisLabelIntersectAction.rotate45,
-                          majorGridLines: const MajorGridLines(width: 0),
-                          axisLine: const AxisLine(width: 0),
-                          labelStyle: const TextStyle(
-                              color: Color(0xff002642),
-                              fontFamily: 'Roboto',
-                              fontWeight: FontWeight.w500),
-                        ),
-                        primaryYAxis: NumericAxis(
-                            isVisible: false,
-                            majorGridLines: const MajorGridLines(width: 0),
-                            axisLine: const AxisLine(width: 0)),
-                        series: <ChartSeries<Items, String>>[
-                          // Renders column chart
-                          ColumnSeries<Items, String>(
-                            dataLabelSettings:  DataLabelSettings(
-                                  isVisible: true,
-
-                              ),
-                              dataSource: _items,
-                              xValueMapper: (Items data, _) => data.item,
-                              yValueMapper: (Items data, _) => data.count),
-
-                        ],
-
+                      height: 450,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: BarChartSample1(),
                       ),
                     ),
                   ),
