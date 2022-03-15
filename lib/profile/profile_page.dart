@@ -27,7 +27,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   decoration: const BoxDecoration(
                     color: Color(0xff209fa5),
                     borderRadius: BorderRadius.vertical(
-                      bottom: Radius.circular(30),
+                      bottom: Radius.circular(50),
                     ),
                   ),
                 ),
