@@ -26,7 +26,7 @@ class DonationsBarChartState extends State<DonationsBarChart> {
       aspectRatio: 1,
       child: Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
-        color: kColorSecondary,
+        color: kColorPrimary,
         child: Stack(
           children: <Widget>[
             Padding(

@@ -128,7 +128,7 @@ class BeneficiariesWidget extends StatelessWidget {
 
                           ),
                           Spacer(),
-                          RoundButton(myColor: kColorPrimary, myText: "Donate", textColor: Colors.white)
+                          RoundButton(myColor: kColorPrimary, myText: "Donate", textColor: Colors.white,radiusSize: 5,)
                         ],
                       )
                     ],
