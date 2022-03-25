@@ -37,7 +37,7 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget header() {
     return Container(
-      margin: EdgeInsets.only(left: 16, right: 16),
+      margin: const EdgeInsets.only(left: 16, right: 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: const [],
@@ -114,7 +114,7 @@ class _LoginPageState extends State<LoginPage> {
                 alignment: Alignment.bottomRight,
                 child: Text(
                   "Forgot password?",
-                  style: TextStyle(color: Color(0xff002642)),
+                  style: TextStyle(color: Colors.blueAccent),
                 ),
               ),
               const SizedBox(

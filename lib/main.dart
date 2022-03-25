@@ -5,9 +5,12 @@ import 'package:bestow/profile/profile_page.dart';
 import 'package:bestow/upload_item/add_donation_page.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MaterialApp(home: const LoginPage()));
-
-
+void main() => runApp(
+      const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: LoginPage(),
+      ),
+    );
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -18,14 +21,12 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-  TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+  static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
     DashboardPage(),
     AddDonationPage(),
     DonationsPage(),
     ProfilePage(),
-
   ];
 
   void _onItemTapped(int index) {
@@ -37,7 +38,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    backgroundColor: Colors.white,
+      backgroundColor: Colors.white,
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
@@ -57,7 +58,6 @@ class _HomePageState extends State<HomePage> {
             icon: Icon(Icons.list_alt_outlined),
             label: 'Donations',
           ),
-
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
             label: 'Profile',

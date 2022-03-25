@@ -16,25 +16,28 @@ class _SignupPageState extends State<SignupPage> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        child: Scaffold(
-      backgroundColor: Colors.white,
-      body: Padding(
+      child: Scaffold(
+    backgroundColor: Colors.white,
+    body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-            SizedBox(
-                height: 120, width: 120, child: Image.asset("assets/images/logo_placeholder.png")),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                header(),
-                signUpForm(),
-              ],
-            ),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(
+                  height: 120, width: 120, child: Image.asset("assets/images/logo_placeholder.png")),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  header(),
+                  signUpForm(),
+                ],
+              ),
+            ],
+          ),
         ),
-      ),
-    ));
+    ),
+    ),
+    );
   }
 
   Widget header() {
