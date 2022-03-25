@@ -20,18 +20,16 @@ class _LoginPageState extends State<LoginPage> {
       backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-            SizedBox(
-                height: 120, width: 120, child: Image.asset("assets/images/logo_placeholder.png")),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                header(),
-                signUpForm(),
-              ],
-            ),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+           crossAxisAlignment: CrossAxisAlignment.center,
+           children: [
+             SizedBox(
+                 height: 120, width: 120, child: Image.asset("assets/images/logo_placeholder.png")),
+             header(),
+             signUpForm(),
+           ],
+              ),
         ),
       ),
     ));
