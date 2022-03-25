@@ -1,37 +1,22 @@
 import 'package:bestow/dashboard/dashboard_page.dart';
 import 'package:bestow/donations/donations_page.dart';
+import 'package:bestow/login/login_page.dart';
 import 'package:bestow/profile/profile_page.dart';
 import 'package:bestow/upload_item/add_donation_page.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(MaterialApp(home: const LoginPage()));
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
 
-  static const String _title = 'Flutter Code Sample';
 
-  @override
-  Widget build(BuildContext context) {
-    return  MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primaryColor: Color(0xff209fa5),
-      ),
-      title: _title,
-      home: const MyStatefulWidget(),
-    );
-  }
-}
-
-class MyStatefulWidget extends StatefulWidget {
-  const MyStatefulWidget({Key? key}) : super(key: key);
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
-  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
   TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
