@@ -1,48 +1,52 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../base_colors.dart';
 import 'base_fonts.dart';
 
-class AppFonts implements BaseFonts{
+class AppFonts implements BaseFonts {
+  AppFonts instance = AppFonts();
   @override
-  // TODO: implement header1
-  TextStyle get header1 => throw UnimplementedError();
-
-  @override
-  // TODO: implement header2
-  TextStyle get header2 => throw UnimplementedError();
+  TextStyle get header1 => GoogleFonts.raleway(
+      textStyle: TextStyle(fontWeight: FontWeight.w600, fontSize: 28.0, color: colors.black30));
 
   @override
-  // TODO: implement header3
-  TextStyle get header3 => throw UnimplementedError();
+  TextStyle get header2 => GoogleFonts.raleway(
+      textStyle: TextStyle(fontWeight: FontWeight.w600, fontSize: 24.0, color: colors.black30));
 
   @override
-  // TODO: implement lead
-  TextStyle get lead => throw UnimplementedError();
+  TextStyle get header3 => GoogleFonts.raleway(
+      textStyle: TextStyle(fontWeight: FontWeight.w600, fontSize: 24.0, color: colors.black30));
 
   @override
-  // TODO: implement paragraph
-  TextStyle get paragraph => throw UnimplementedError();
+  TextStyle get lead => const TextStyle(fontWeight: FontWeight.w400, fontSize: 20.0);
 
   @override
-  // TODO: implement paragraphBold
-  TextStyle get paragraphBold => throw UnimplementedError();
+  TextStyle get paragraph =>
+      TextStyle(fontWeight: FontWeight.w400, fontSize: 18.0, color: colors.black30);
 
   @override
-  // TODO: implement paragraphItalic
-  TextStyle get paragraphItalic => throw UnimplementedError();
+  TextStyle get paragraphBold =>
+      TextStyle(fontWeight: FontWeight.w600, fontSize: 18.0, color: colors.black30);
 
   @override
-  // TODO: implement detail
-  TextStyle get detail => throw UnimplementedError();
+  TextStyle get paragraphItalic => TextStyle(
+        fontWeight: FontWeight.w400,
+        fontSize: 18.0,
+        fontStyle: FontStyle.italic,
+        color: colors.black30,
+      );
 
   @override
-  // TODO: implement detailBold
-  TextStyle get detailBold => throw UnimplementedError();
-
+  TextStyle get detail =>
+      TextStyle(fontWeight: FontWeight.w400, fontSize: 14.0, color: colors.black30);
 
   @override
-  // TODO: implement fontFamily
-  GoogleFonts get fontFamily => throw UnimplementedError();
+  TextStyle get detailBold =>
+      TextStyle(fontWeight: FontWeight.w600, fontSize: 14.0, color: colors.black30);
 
+  @override
+  GoogleFonts get fontFamily => GoogleFonts();
+
+  BaseColors get colors => BaseColors();
 }

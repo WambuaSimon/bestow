@@ -90,7 +90,8 @@ class _DashboardPageState extends State<DashboardPage> {
                                     ClipPath(
                                       clipper: DiagonalPathClipperOne(),
                                       child: Container(
-                                        height: 100,
+                                        height: 80,
+
                                         decoration: BoxDecoration(
                                           borderRadius: BorderRadius.all(Radius.circular(10.0)),
                                           color: kColorSecodaryDark.withOpacity(0.4),
@@ -99,30 +100,27 @@ class _DashboardPageState extends State<DashboardPage> {
                                           crossAxisAlignment: CrossAxisAlignment.start,
                                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                           children:  [
-                                            const Padding(
-                                              padding:  EdgeInsets.all(8.0),
-                                              child: CircleAvatar(
-                                                radius: 20.0,
-                                                backgroundImage: AssetImage("assets/images/clothing.jpeg"),
+                                            Container(
+
+                                              child: const Padding(
+                                                padding: EdgeInsets.all(1.5),
+                                                child: CircleAvatar(
+                                                  radius: 20.0,
+                                                  backgroundImage: AssetImage("assets/images/clothing.jpeg"),
+                                                ),
                                               ),
+                                                  margin: EdgeInsets.symmetric(horizontal: 10),
                                             ),
-                                            Column(
-                                              children: [
-
-                                                Padding(
-                                                  padding: EdgeInsets.all(8.0),
-                                                  child: Text(
-                                                    "17",
-                                                    style: GoogleFonts.raleway(
-                                                      textStyle:
-                                                      TextStyle(color: Colors.white,fontSize: 16,fontWeight: FontWeight.bold),
-                                                    ),
-
-                                                  ),
+                                            Padding(
+                                              padding: const EdgeInsets.all(8.0),
+                                              child: Text(
+                                                "17",
+                                                style: GoogleFonts.raleway(
+                                                  textStyle:
+                                                  TextStyle(color: Colors.white,fontSize: 16,fontWeight: FontWeight.bold),
                                                 ),
 
-                                                
-                                              ],
+                                              ),
                                             )
                                           ],
                                         ),

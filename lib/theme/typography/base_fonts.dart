@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 abstract class BaseFonts {
-  GoogleFonts get fontFamily => GoogleFonts();
+  GoogleFonts get fontFamily;
   TextStyle get header1;
   TextStyle get header2;
   TextStyle get header3;
