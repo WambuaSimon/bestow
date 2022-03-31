@@ -1,6 +1,8 @@
 import 'package:bestow/dashboard/dashboard_page.dart';
 import 'package:bestow/main.dart';
+import 'package:bestow/mixin/theme_mixin.dart';
 import 'package:bestow/sign_up/signup_page.dart';
+import 'package:bestow/theme/app_theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
@@ -37,7 +39,7 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget header() {
     return Container(
-      margin: EdgeInsets.only(left: 16, right: 16),
+      margin: const EdgeInsets.only(left: 16, right: 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: const [],
@@ -55,10 +57,10 @@ class _LoginPageState extends State<LoginPage> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
+               const Text(
                 "Welcome",
                 style:
-                    TextStyle(color: Color(0xff002642), fontSize: 25, fontWeight: FontWeight.bold),
+                    TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 5),
               const Text(
@@ -114,7 +116,7 @@ class _LoginPageState extends State<LoginPage> {
                 alignment: Alignment.bottomRight,
                 child: Text(
                   "Forgot password?",
-                  style: TextStyle(color: Color(0xff002642)),
+                  style: TextStyle(color: Colors.blueAccent),
                 ),
               ),
               const SizedBox(

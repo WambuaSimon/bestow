@@ -1,6 +1,13 @@
+import 'package:bestow/utils/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
-import 'beneficiaries_widget.dart';
+import '../utils/custom_app_bar.dart';
+import '../utils/rounded_diagonal_path_clipper.dart';
+import '../utils/round_button.dart';
+import 'widgets/donations_chart_data.dart';
+import 'widgets/beneficiaries_widget.dart';
 import 'items.dart';
 
 class DashboardPage extends StatefulWidget {
@@ -24,78 +31,141 @@ class _DashboardPageState extends State<DashboardPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          title: const Text(
-        "Bestow️",
-        style: TextStyle(color: Color(0xff209fa5)),
-          ),
-          elevation: 0.3,
-          backgroundColor: Colors.white,
-        ),
+        backgroundColor: kColorBodyColor,
+        appBar: PreferredSize(
+            preferredSize: const Size.fromHeight(55),
+            child: CustomAppBar(appBarText: "",)),
         body: SafeArea(
           child: SingleChildScrollView(
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding:  EdgeInsets.all(8.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
                     margin: EdgeInsets.only(left: 10),
-                    child: const Text(
-                      "Donation requests",
-                      style: TextStyle(fontSize: 18, color: Color(0xff209fa5)),
+
+                  ),
+                  const SizedBox(
+                    height: 5,
+                  ),
+
+                  Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: Text(
+                      "Donation Requests",
+                      style: GoogleFonts.raleway(
+                        textStyle:
+                        TextStyle(color: kColorPrimary,fontSize: 18),
+                      ),
+
                     ),
                   ),
                   const SizedBox(
-                    height: 16,
+                    height: 5,
                   ),
-                  Center(
+                   Center(
                     child: SizedBox(
-                      height: 400,
-                      child: SfCartesianChart(
-                        plotAreaBorderWidth: 0,
-                        primaryXAxis: CategoryAxis(
-                          labelIntersectAction:
-                              AxisLabelIntersectAction.rotate45,
-                          majorGridLines: const MajorGridLines(width: 0),
-                          axisLine: const AxisLine(width: 0),
-                          labelStyle: const TextStyle(
-                              color: Color(0xff002642),
-                              fontFamily: 'Roboto',
-                              fontWeight: FontWeight.w500),
-                        ),
-                        primaryYAxis: NumericAxis(
-                            isVisible: false,
-                            majorGridLines: const MajorGridLines(width: 0),
-                            axisLine: const AxisLine(width: 0)),
-                        series: <ChartSeries<Items, String>>[
-                          // Renders column chart
-                          ColumnSeries<Items, String>(
-                            dataLabelSettings:  DataLabelSettings(
-                                  isVisible: true,
+                      height: Get.height * 0.2,
+                      child: Padding(
+                        padding:  EdgeInsets.all(0.0),
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: 5,
+                            itemBuilder: (BuildContext context, int index){
+                            return  Card(
+                              elevation: 2,
+                              child: Container(
+                                height: Get.height * 0.3,
+                                width: Get.width * 0.35,
+                                padding: EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(4),
+                                  color: kColorPrimary,
+                                ),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
 
+                                    ClipPath(
+                                      clipper: DiagonalPathClipperOne(),
+                                      child: Container(
+                                        height: 80,
+
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                          color: kColorSecodaryDark.withOpacity(0.4),
+                                        ),
+                                        child: Row(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          children:  [
+                                            Container(
+
+                                              child: const Padding(
+                                                padding: EdgeInsets.all(1.5),
+                                                child: CircleAvatar(
+                                                  radius: 20.0,
+                                                  backgroundImage: AssetImage("assets/images/clothing.jpeg"),
+                                                ),
+                                              ),
+                                                  margin: EdgeInsets.symmetric(horizontal: 10),
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsets.all(8.0),
+                                              child: Text(
+                                                "17",
+                                                style: GoogleFonts.raleway(
+                                                  textStyle:
+                                                  TextStyle(color: Colors.white,fontSize: 16,fontWeight: FontWeight.bold),
+                                                ),
+
+                                              ),
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+
+                                    Text(
+                                      "Clothing",
+                                      style: GoogleFonts.raleway(
+                                        textStyle:
+                                        TextStyle(color: Colors.white,),
+                                      ),
+
+                                    )
+
+                                  ],
+                                ),
                               ),
-                              dataSource: _items,
-                              xValueMapper: (Items data, _) => data.item,
-                              yValueMapper: (Items data, _) => data.count),
-
-                        ],
-
+                            );
+                            },
+                        ) ,
                       ),
                     ),
                   ),
-                  Container(
-                    margin: const EdgeInsets.only(left: 5, bottom: 8),
-                    child: const Text(
+                  const SizedBox(
+                    height: 5,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: Text(
                       "Beneficiaries",
-                      style: TextStyle(fontSize: 18, color: Color(0xff209fa5)),
+                      style: GoogleFonts.raleway(
+                        textStyle:
+                        TextStyle(color: kColorPrimary,fontSize: 18),
+                      ),
+
                     ),
                   ),
+                  const SizedBox(
+                    height: 5,
+                  ),
                   const BeneficiariesWidget(),
-                  const SizedBox(height: 5,),
+                  const SizedBox(height: 0,),
                   const BeneficiariesWidget(),
-                  const SizedBox(height: 5,),
+                  const SizedBox(height: 0,),
                   const BeneficiariesWidget(),
                 ],
               ),
